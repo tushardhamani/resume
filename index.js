@@ -1,61 +1,25 @@
-// combine all the lessons to produce line graph
+// basic example of d3 data binding
+// see detailed explaination of how it works https://bost.ocks.org/mike/join/
+var theData = [ 1, 2, 3 ]
 
-// set the dimensions and margins of the graph
-var width = 960
-var height = 500
+var p = d3.select("body").selectAll("p") // returns empty selection
+    .data(theData) //selection is joined to an array
+    .enter() //3 possible states (enter / update / exit) because this is empty we use enter to return selection
+    .append("p") //add p tag to each data element
+    .text("hello "); //attr of p tag
 
-// parse the date / time
-var parseTime = d3.timeParse("%d-%b-%y");
-
-// set the ranges
-var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
-
-// define the line
-var valueline = d3.line()
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.close); });
-
-// append the svg obgect to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var svg = d3.select("body").append("svg")
-    .attr("width", width + 100)
-    .attr("height", height + 100)
-  .append("g")
-    .attr("transform",
-          "translate(" + 50 + "," + 50 + ")");
-// Get the data
-d3.csv("https://s3.us-east-2.amazonaws.com/gt-dataviz-d3-workshop/data.csv", function(error, data) {
-  if (error) throw error;
-
-  // format the data
-  data.forEach(function(d) {
-      d.date = parseTime(d.date);
-      d.close = +d.close;
-  });
-
-  // Scale the range of the data
-  x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.close; })]);
-
-  // Add the valueline path.
-  // need to put data in brackets because .data can only take an array, function, or nothing, brackets ensures that each element is passed
-  svg.append("path")
-      .data([data])
-      .attr("class", "line")
-      .attr("d", valueline)
-
-  // Add the X Axis
-  svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-
-  // Add the Y Axis
-  svg.append("g")
-      .call(d3.axisLeft(y));
-
-});
+// javascript anonymous functions
+// javascript reserved i and this
+// var p = d3.select("body").selectAll("p")
+//     .data(theData)
+//     .enter()
+//     .append("p")
+//     .text(function(d) {
+//         return d
+//     });
 
 
-// ADVANCED HOVER OVER FUNCTION https://bl.ocks.org/micahstubbs/e4f5c830c264d26621b80b754219ae1b
+//.data no key so you can pass array d3 generates key for you
+//.enter placeholder for missing elements
+
+// Instead of telling D3 how to do something, tell D3 what you want.
