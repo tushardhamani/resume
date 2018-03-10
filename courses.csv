@@ -1,23 +1,22 @@
-source,target,school
-me,me,me
-Construction Management,me,iitb
-Probabilistic & Statistical Methods,me,iitb
-Managerial Psychology,me,iitb
-Organizational Behavior,me,iitb
-Urban Science,me,iitb
-Civil Engineering,me,iitb
-Project Management,me,iitb
-Operations Management,me,iitb
-Marketing Management,me,iitb
-Human Resource Management,me,iitb
-International Competitiveness,me,iitb
-Real Estate Finance & Development,me,gt
-Pre-design Management,me,gt
-Design Management,me,gt
-Leadership in Design & Construction,me,gt
-Quantitative Risk Analysis & Decision Making,me,gt
-Technology Applications in Built Environment,me,gt
-Consumer Behavior,me,gt
-An Entire MBA in One Course,me,online
-Financial Engineering and Risk Management,me,online
-Financial Markets,me,online
+source,target,
+me,Construction Management,
+Probabilistic & Statistical Methods,me,
+Managerial Psychology,me,
+Organizational Behavior,me,
+Urban Science,me,
+Civil Engineering,me,
+Project Management,me,
+Operations Management,me,
+Marketing Management,me,
+Human Resource Management,me,
+International Competitiveness,me,
+Real Estate Finance & Development,me,
+Pre-design Management,me,
+Design Management,me,
+Leadership in Design & Construction,me,
+Quantitative Risk Analysis & Decision Making,me,
+Technology Applications in Built Environment,me,
+Consumer Behavior,me,
+An Entire MBA in One Course,me,
+Financial Engineering and Risk Management,me,
+Financial Markets,me,
